@@ -15,7 +15,7 @@ PROTOCOL_URL := https://raw.githubusercontent.com/nervosnetwork/ckb/${PROTOCOL_V
 # docker pull nervos/ckb-riscv-gnu-toolchain:bionic-20190702
 BUILDER_DOCKER := nervos/ckb-riscv-gnu-toolchain@sha256:7b168b4b109a0f741078a71b7c4dddaf1d283a5244608f7851f5714fbad273ba
 
-all: specs/cells/ckb_cell_upgrade specs/cells/secp256k1_keccak256_sighash_all  specs/cells/secp256k1_keccak256_sighash_all_acpl
+all: specs/cells/secp256k1_keccak256_sighash_all  specs/cells/secp256k1_keccak256_sighash_all_acpl
 
 all-via-docker: ${PROTOCOL_HEADER}
 	docker run --rm -v `pwd`:/code ${BUILDER_DOCKER} bash -c "cd /code && make"
